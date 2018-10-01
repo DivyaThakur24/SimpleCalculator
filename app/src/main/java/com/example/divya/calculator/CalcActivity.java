@@ -87,9 +87,6 @@ public class CalcActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-
-
                 if (mAddition == true) {
                     String value[] = txtScreen.getText().toString().split(" + ",2);
                     mValueTwo = Float.parseFloat(value[1]);
@@ -99,21 +96,21 @@ public class CalcActivity extends AppCompatActivity {
 
 
                 if (mSubtract == true) {
-                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    String value[] = txtScreen.getText().toString().split(" - ",2);
                     mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne - mValueTwo + "");
                     mSubtract = false;
                 }
 
                 if (mMultiplication == true) {
-                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    String value[] = txtScreen.getText().toString().split(" * ",2);
                     mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne * mValueTwo + "");
                     mMultiplication = false;
                 }
 
                 if (mDivision == true) {
-                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    String value[] = txtScreen.getText().toString().split(" / ",2);
                     mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne / mValueTwo + "");
                     mDivision = false;
