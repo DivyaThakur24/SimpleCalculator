@@ -1,9 +1,8 @@
 package com.example.divya.calculator;
 
-import android.app.FragmentManager;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -87,29 +86,35 @@ public class CalcActivity extends AppCompatActivity {
         btnEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mAddition || mSubtract || mMultiplication || mDivision) {
-                    String value[] = txtScreen.getText().toString().split(" + ",2);
-                    mValueTwo = Float.parseFloat(value[1]);
-                }
+
+
+
 
                 if (mAddition == true) {
-                    result = mValueOne + mValueTwo;
-                    txtScreen.setText(result + "");
+                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    mValueTwo = Float.parseFloat(value[1]);
+                    txtScreen.setText(mValueOne + mValueTwo + "");
                     mAddition = false;
                 }
 
 
                 if (mSubtract == true) {
+                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne - mValueTwo + "");
                     mSubtract = false;
                 }
 
                 if (mMultiplication == true) {
+                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne * mValueTwo + "");
                     mMultiplication = false;
                 }
 
                 if (mDivision == true) {
+                    String value[] = txtScreen.getText().toString().split(" + ",2);
+                    mValueTwo = Float.parseFloat(value[1]);
                     txtScreen.setText(mValueOne / mValueTwo + "");
                     mDivision = false;
                 }
