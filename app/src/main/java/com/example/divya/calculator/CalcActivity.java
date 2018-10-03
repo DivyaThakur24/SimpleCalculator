@@ -84,34 +84,36 @@ public class CalcActivity extends AppCompatActivity {
             }
         });
         btnEqual.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
                 if (mAddition == true) {
-                    String value[] = txtScreen.getText().toString().split(" + ",2);
-                    mValueTwo = Float.parseFloat(value[1]);
+                    /*String value[] = txtScreen.getText().toString().split(" + ",2);
+                    mValueTwo = Float.parseFloat(value[1]);*/
                     txtScreen.setText(mValueOne + mValueTwo + "");
                     mAddition = false;
                 }
 
 
                 if (mSubtract == true) {
-                    String value[] = txtScreen.getText().toString().split(" - ",2);
-                    mValueTwo = Float.parseFloat(value[1]);
+                    /*String value[] = txtScreen.getText().toString().split(" - ",2);
+                    mValueTwo = Float.parseFloat(value[1]);*/
                     txtScreen.setText(mValueOne - mValueTwo + "");
                     mSubtract = false;
                 }
 
                 if (mMultiplication == true) {
-                    String value[] = txtScreen.getText().toString().split(" * ",2);
-                    mValueTwo = Float.parseFloat(value[1]);
+                    /*String value[] = txtScreen.getText().toString().split(" * ",2);
+                    mValueTwo = Float.parseFloat(value[1]);*/
                     txtScreen.setText(mValueOne * mValueTwo + "");
                     mMultiplication = false;
                 }
 
                 if (mDivision == true) {
-                    String value[] = txtScreen.getText().toString().split(" / ",2);
-                    mValueTwo = Float.parseFloat(value[1]);
+                    /*String value[] = txtScreen.getText().toString().split(" / ",2);
+                    mValueTwo = Float.parseFloat(value[1]);*/
+
                     txtScreen.setText(mValueOne / mValueTwo + "");
                     mDivision = false;
                 }
@@ -150,6 +152,7 @@ public class CalcActivity extends AppCompatActivity {
                 // Just append/set the text of clicked button
                 Button button = (Button) v;
                 txtScreen.append(button.getText());
+                mValueTwo = Float.parseFloat(button.getText().toString());
             }
         };
         // Assign the listener to all the numeric buttons
